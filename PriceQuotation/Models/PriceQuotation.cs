@@ -20,7 +20,7 @@ namespace PriceQuotation.Models
         public int DiscountPercent { get; set; }
 
 
-        public decimal DiscountAmount => Subtotal * (DiscountAmount / 100);
+        public decimal DiscountAmount => Subtotal * (DiscountPercent / 100);
 
         public decimal Total => Subtotal - DiscountAmount;
 
