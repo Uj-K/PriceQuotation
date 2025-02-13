@@ -1,10 +1,14 @@
 html {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+        h2 {
+          font-weight: bold;
+          color: blue; 
+        }
+    font-size: 15px;
   }
 }
 
@@ -13,10 +17,18 @@ html {
 }
 
 html {
-  position: relative;
+  position: relative; 
   min-height: 100%;
 }
 
 body {
   margin-bottom: 60px;
+  text-align: left;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0;
+    padding: 1rem;
+    text-align: left;
 }

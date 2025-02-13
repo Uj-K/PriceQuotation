@@ -10,12 +10,12 @@
 <form asp-action="Index" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div>
-        <label asp-for="Subtotal"></label>
+        <label asp-for="Subtotal">Subtotal: </label>
         <input asp-for="Subtotal" />
         <span asp-validation-for="Subtotal" class="text-danger"></span>
     </div>
     <div>
-        <label asp-for="DiscountPercent"></label>
+        <label asp-for="DiscountPercent">Discount Percent: </label>
         <input asp-for="DiscountPercent" />
         <span asp-validation-for="DiscountPercent" class="text-danger"></span>
     </div>
@@ -24,8 +24,8 @@
     @if (Model != null)
     {
         <div>
-            <p>Discount Amount: @Model.DiscountAmount.ToString("C")</p>
-            <p>Total: @Model.Total.ToString("C")</p>
+            <p>Discount Amount: @Model.DiscountAmount.ToString("C2")</p>
+            <p>Total: @Model.Total.ToString("C2")</p>
         </div>
     }
 
