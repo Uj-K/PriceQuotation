@@ -16,11 +16,19 @@ namespace PriceQuotation.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            return View(new Models.PriceQuotation()); 
         }
 
-
-
+        [HttpPost]
+        public IActionResult Index(Models.PriceQuotation model) 
+        {
+            if (ModelState.IsValid)
+            {
+                
+                return View(model);
+            }
+            return View(model);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

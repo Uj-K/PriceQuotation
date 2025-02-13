@@ -9,18 +9,18 @@ namespace PriceQuotation.Models
         /// The sale price  
         /// </summary>
         [Required(ErrorMessage = "Subtotal price is required.")]
-        [Range(0.00, double.MaxValue, ErrorMessage = "Subtotal price must to be grater than 0")]
-        public decimal Subtotal { get; set; }
+        [Range(0.01, double.MaxValue, ErrorMessage = "Subtotal price must to be grater than 0")]
+        public decimal Subtotal { get; set; } = 0;
 
         /// <summary>
         /// The present of discount rate
         /// </summary>
-        [Required]
-        [ Range(0, 100, ErrorMessage = "Discount Percent must to be a valid number from 0 to 100.")]
-        public int DiscountPercent { get; set; }
+        [Required(ErrorMessage = "Discount percent is required.")]
+        [Range(0, 100, ErrorMessage = "Discount Percent must to be a valid number from 0 to 100.")]
+        public int DiscountPercent { get; set; } = 0;
 
 
-        public decimal DiscountAmount => Subtotal * (DiscountPercent / 100);
+        public decimal DiscountAmount => Subtotal * (DiscountPercent / 100m);
 
         public decimal Total => Subtotal - DiscountAmount;
 
